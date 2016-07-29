@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>form</title>
+    <link rel="stylesheet" type="text/css" href="../reset.css">
+    <script type="text/javascript" src="../jquery.min.js"></script>
+    <script>
+    $(function(){
+        $.getJSON('http://api.douban.com/v2/movie/top250?callback=?',function(data){
+            console.log(data);
+        });
+    });
+    </script>
+</head>
+<body>
+    <form action="">
+        <div><span>姓名</span><span><input type="text" placeholder="程佳斌"></span></div>
+        <div><span>态度</span><span><label><input type="radio" name="action" id="" checked> 支持</label><label><input type="radio" name="action" id=""> 反对</label></span></div>
+        <div><span></span><span><select name="" id="">
+            <optgroup>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </optgroup>
+            <optgroup>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </optgroup>
+            <optgroup>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </optgroup>
+        </select></span></div>
+        <div><span></span><span><select name="" id="" multiple>
+            <optgroup>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </optgroup>
+            <optgroup>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </optgroup>
+            <optgroup>
+                <option value="6">6</option>
+                <option value="7">7</option>
+                <option value="8">8</option>
+            </optgroup>
+        </select></span></div>
+        <div><span></span><span><textarea name="" id="" cols="30" rows="10">this is nice</textarea></span></div>
+        <div><span>身份证</span><span><input type="file" name="" id=""></span></div>
+        <div><span><label><input type="checkbox" name="" id=""> 我同意上述协议</label></span></div>
+        <div><span><input type="button" value="确定"></span></div>
+        <div><span><input type="submit" value="提交"></span></div>
+        <div><span><input type="reset" value="重置"></span></div>
+    </form>
+</body>
+</html>
