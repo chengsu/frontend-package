@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sticky Footer</title>
+    <style>
+    /* 兼容ie6 */
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%; /* 要点 */
+        }
+        .wrapper{
+            _height: 100%; /* 要点：ie6 min-height 兼容 */
+            background: #f1f1f1;
+            margin: 0 auto;
+            min-height: 100%; /* 要点 */
+            width: 1000px;
+        }
+        .content{
+            padding-bottom: 120px; /* 要点：footer 上面的 margin 效果 */
+        }
+        .main{
+            background: #f60;
+            height: 500px;
+        }
+        .footer{
+            background: #333;
+            height: 100px; /* 要点 */
+            margin-top: -100px; /* 要点 */
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="content">
+            <div class="main">
+                <button onclick="this.parentNode.offsetHeight<1200?this.parentNode.style.height='1200px':this.parentNode.style.height='500px'">height:1200px</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>
