@@ -1,6 +1,6 @@
 # frontend-package
 
-前端js资源集合-支持到ie6
+前端资源集合
 
 ## 工具库
 
