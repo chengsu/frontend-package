@@ -23,3 +23,7 @@
 ## UI
 
 * ![](https://img.shields.io/github/stars/twbs/bootstrap.svg)  [bootstrap](https://github.com//twbs/bootstrap)
+
+## 动画（js, animate, transition, canvas）
+
+* ![](https://img.shields.io/github/stars/h5bp/Effeckt.svg)  [Effeckt.css](https://github.com/h5bp/Effeckt.css)
