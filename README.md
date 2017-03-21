@@ -26,4 +26,4 @@
 
 ## 动画（js, animate, transition, canvas）
 
-* ![](https://img.shields.io/github/stars/h5bp/Effeckt.svg)  [Effeckt.css](https://github.com/h5bp/Effeckt.css)
+* ![](https://img.shields.io/github/stars/h5bp/Effeckt.css.svg)  [Effeckt.css](https://github.com/h5bp/Effeckt.css)
