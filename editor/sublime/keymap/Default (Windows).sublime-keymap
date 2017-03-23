@@ -1,0 +1,24 @@
+[
+	{"keys": ["ctrl+shift+a"], "command": "alignment"},
+
+	{"keys": ["ctrl+\\"], "command": "replace_completion_with_auto_complete", "context": [{"operator": "equal", "operand": false, "key": "auto_complete_visible"},{"operator": "equal", "operand": "insert_best_completion", "key": "last_command"},{"operator": "equal", "operand": true, "key": "setting.tab_completion"} ] },
+
+	{"keys": ["ctrl+k", "ctrl+t"], "command": "title_case"},
+
+	{"keys": ["ctrl+shift+alt+p"], "command": "htmlprettify"},
+	{"keys": ["ctrl+shift+alt+t"], "command": "delete_empty_lines"},
+
+	{"keys": ["ctrl+shift+alt+g"], "command": "save_with_gbk"},
+	{"keys": ["ctrl+shift+alt+u"], "command": "save_with_utf8"},
+
+	{"keys": ["ctrl+shift+u"], "command": "soft_redo"},
+	{"keys": ["ctrl+u"], "command": "soft_undo"},
+
+	{"keys": ["ctrl+shift+alt+s"], "command": "stringify_javascript"},
+	{"keys": ["ctrl+shift+alt+d"], "command": "de_stringify_javascript"},
+
+	{"keys": ["ctrl+k", "ctrl+m"], "command": "run_emmet_action", "args":{"action": "merge_lines"}, "context": [{"key": "emmet_action_enabled.merge_lines"} ] },
+	{"keys": ["ctrl+."], "command": "run_emmet_action", "args":{"action": "balance_inward"}, "context": [{"key": "emmet_action_enabled.balance_inward"} ] },
+	{"keys": ["shift+ctrl+,"], "command": "run_emmet_action", "args":{"action": "select_previous_item"}, "context": [{"key": "emmet_action_enabled.select_previous_item"} ] },
+  {"keys": ["ctrl+alt+u"], "args": {"action": "update_image_size"}, "command": "run_emmet_action", "context": [{"key": "emmet_action_enabled.update_image_size"} ] }
+]

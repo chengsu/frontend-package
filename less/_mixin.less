@@ -1,0 +1,80 @@
+// opacity
+.opacity(@opacity:.5){
+    @o:@opacity * 100;
+    opacity:@opacity;
+    filter:e("alpha(opacity=@{o})");
+
+    :root &{
+        filter:none;
+    }
+}
+
+// background:rgba();
+.rgba(rgb,@r:0,@g:0,@b:0,@a:.5){
+    background: rgba(@r,@g,@b,@a);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=argb(rgba(@r,@g,@b,@a)),endColorstr=argb(rgba(@r,@g,@b,@a)));
+
+    :root &{
+        filter:none;
+    }
+}
+
+// background:rgba();
+.rgba(hex,@color:#000,@a:.5){
+    @r:red(@color);
+    @g:green(@color);
+    @b:blue(@color);
+    @argb:argb(rgba(@r,@g,@b,@a));
+    background: rgba(@r,@g,@b,@a);
+    filter:e("progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb},endColorstr=@{argb})");
+
+    :root &{
+        filter:none;
+    }
+}
+
+// position:fix --bottom
+.fix(bottom,@bottom:15px,@ietop:261px){
+    @t:Unit(@ietop);
+    position: fixed;
+    _position: absolute;
+    bottom: @bottom;
+    _top: e("expression(eval(document.documentElement.scrollTop + document.documentElement.clientHeight - @{t}))");
+}
+
+// position:fix --top
+.fix(top,@top:15px){
+    @t:Unit(@top);
+    position: fixed;
+    _position: absolute;
+    top: @top;
+    _top: e("expression(eval(document.documentElement.scrollTop + @{t}))");
+}
+
+.scrollbar(){
+    &::-webkit-scrollbar {
+        -webkit-appearance: none;
+        width: 10px
+    }
+
+    &::-webkit-scrollbar-button {
+        display: none
+    }
+
+    &::-webkit-scrollbar-track {
+        background: #fff
+    }
+
+    &::-webkit-scrollbar-thumb {
+        min-height: 2rem;
+        background: #d2d2d2;
+        background-clip: padding-box;
+        border: 3px solid #fff;
+        border-radius: 5px
+    }
+
+    &::-webkit-scrollbar-thumb:hover,&::-webkit-scrollbar-thumb:active {
+        background-color: #aaa;
+        border-width: 2px
+    }
+}

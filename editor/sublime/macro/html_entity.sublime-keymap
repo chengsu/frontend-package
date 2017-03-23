@@ -1,0 +1,50 @@
+[
+    {
+        "keys": ["alt+7"], "command": "insert",
+        "args": {"characters": "&nbsp;"}
+    },
+    {
+        "keys": ["alt+."], "command": "insert",
+        "args": {"characters": "&lt;"}
+    },
+    {
+        "keys": ["alt+,"], "command": "insert",
+        "args": {"characters": "&gt;"}
+    },
+    {
+        "keys": ["alt+c"], "command": "insert",
+        "args": {"characters": "&copy;"}
+    },
+    {
+        "keys": ["alt+r"], "command": "insert",
+        "args": {"characters": "&reg;"}
+    },
+    {
+        "keys": ["alt+t"], "command": "insert",
+        "args": {"characters": "&trade;"}
+    },
+    {
+        "keys": ["alt+/"], "command": "insert",
+        "args": {"characters": "&divide;"}
+    },
+    {
+        "keys": ["alt+8"], "command": "insert",
+        "args": {"characters": "&times;"}
+    },
+    {
+        "keys": ["alt+k","alt+k","alt+."], "command": "insert",
+        "args": {"characters": "&raquo;"}
+    },
+    {
+        "keys": ["alt+k","alt+k","alt+,"], "command": "insert",
+        "args": {"characters": "&laquo;"}
+    },
+    {
+        "keys": ["alt+k","alt+."], "command": "insert",
+        "args": {"characters": "&rsaquo;"}
+    },
+    {
+        "keys": ["alt+k","alt+,"], "command": "insert",
+        "args": {"characters": "&lsaquo;"}
+    }
+]

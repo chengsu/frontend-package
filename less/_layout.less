@@ -1,0 +1,10 @@
+/*= layout =*/
+.wp{ width: 1000px; margin-left: auto; margin-right: auto; }
+
+/*(z-index)*/
+.behindview,.frontview,.coverview{ position: absolute; width: 100%; height: 0; top: 0; left: 0; }
+.behindview{ z-index:1; }
+.content{ position: relative; z-index:10; }
+.cvHomeTopbar{ z-index:900; }
+.frontview{ z-index:1000; }
+.coverview{ z-index: 5000; }

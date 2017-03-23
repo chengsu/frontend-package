@@ -1,6 +1,6 @@
 !function($){
     $.fn.formsave=function(option){
-        // Èç¹û²»Ö§³Ö localStrage £¬ÔòÊ²Ã´Ò²²»×ö
+        // å¦‚æœä¸æ”¯æŒ localStrage ï¼Œåˆ™ä»€ä¹ˆä¹Ÿä¸åš
         if(!window.localStorage || !window.JSON){
             return {
                 data      : {},
@@ -23,7 +23,7 @@
             var data=JSON.parse(ls.getItem(key)||'{}');
 
             var $tipStyle='<style>.m-formdata{position: fixed;z-index: 1000;text-align: center;width: 100%;top: -50px;left: 0;}.m-formdata p{display: inline-block;border: 1px #ddd solid;padding: 10px;background: #f1f1f1;}.m-formdata a{margin: 0 10px;color:#196baf;cursor: pointer;}.m-formdata a:hover{color:#f00;}</style>';
-            var $tip=$('<div class="m-formdata"><p>ÊÇ·ñ»Ö¸´Ö®Ç°ÌîĞ´µÄ±íµ¥ÄÚÈİ£¿<a href="javascript:void(0);" id="jsFormdataYes">»Ö¸´</a><a href="javascript:void(0);" id="jsFormdataNo">È¡Ïû</a></p></div>');
+            var $tip=$('<div class="m-formdata"><p>æ˜¯å¦æ¢å¤ä¹‹å‰å¡«å†™çš„è¡¨å•å†…å®¹ï¼Ÿ<a href="javascript:void(0);" id="jsFormdataYes">æ¢å¤</a><a href="javascript:void(0);" id="jsFormdataNo">å–æ¶ˆ</a></p></div>');
             var showTip=false;
             var tipTimeout=null;
             var $body=$(document.body);
@@ -32,7 +32,7 @@
                 if(ele.type=='radio'){
                     return $(ele).attr('name') || '';
                 }else if(ele.type=='checkbox' && ele.value){
-                    // checkbox °ó¶¨ value ºó×º£¬Ê¹ÓÃË«ÏÂ»®ÏßÒÔÇø±ğÓÚÊ¹ÓÃ index µÄ°ó¶¨£¬ÒÔÓ¦¶Ô¶¯Ì¬±ä»¯µÄ DOM ½á¹¹
+                    // checkbox ç»‘å®š value åç¼€ï¼Œä½¿ç”¨åŒä¸‹åˆ’çº¿ä»¥åŒºåˆ«äºä½¿ç”¨ index çš„ç»‘å®šï¼Œä»¥åº”å¯¹åŠ¨æ€å˜åŒ–çš„ DOM ç»“æ„
                     return $(ele).attr('name') + '__' + ele.value || '';
                 }else{
                     var name = $(ele).attr('name');
@@ -70,10 +70,10 @@
                 }
             }
 
-            function restoreValue(ele){
+            function restoreValue(ele, name){
                 if(!ele)
                     return;
-                var val=data[$(ele).data('name')||getWholeKeyName(ele)];
+                var val=data[name||$(ele).data('name')||getWholeKeyName(ele)];
                 if(typeof val != 'undefined'){
                     if(ele.type=='radio'){
                         if(ele.value==val){
