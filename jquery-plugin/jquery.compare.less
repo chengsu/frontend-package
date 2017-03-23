@@ -1,0 +1,82 @@
+/* compare */
+#compareDiv {
+    position: fixed; _position: absolute; top: 35px;
+    _top: e('expression(eval(document.documentElement.scrollTop +35) )');
+    right: 30px; width: 130px; border: 1px solid #FFAE40; background: #FFF;
+    z-index: 1001;
+    h2 {
+        height: 26px; line-height: 26px; background: #F0974F; color: #FFF;
+        font-size: 14px; text-indent: 5px;
+
+        em {
+            color: #FFFF99; font-style: normal;
+        }
+    }
+
+    li {
+        display: block; width: 120px; padding: 5px;
+        border-bottom: 1px solid #FFAE40; position: relative;
+        _vertical-align: bottom;
+
+        &.cur {
+            background: #FFFCBF;
+        }
+    }
+
+    .close {
+        position: absolute; top: 0; right: 5px; text-align: center;
+        color: #FFF; font-size: 18px; font-weight: bold; cursor: default;
+    }
+
+    li .close {
+        top: 0; right: 6px; color: #F0974F; font-size: 14px;
+        visibility: hidden;
+        cursor: pointer;
+    }
+
+    li.cur .close {
+        visibility: visible;
+    }
+
+    li .p {
+        display: none; width: 60px; height: 37px; padding: 2px;
+        line-height: 33px; text-align: center; color: #999;
+        text-decoration: none; border: 1px solid #B2CFE6; margin: 0 auto;
+        overflow: hidden;
+
+        .p img {
+            display: block; height: 37px; margin: 0 auto;
+        }
+    }
+
+    li .t {
+        display: block; width: 120px; margin-top: 10px;
+        margin-bottom: 10px; line-height: 14px;
+        text-align: center; word-wrap: break-word; word-break: break-all;
+
+        a {
+            color: #0368A8;
+            font-size: 12px;
+
+            &:hover {
+                color: #F30;;
+            }
+        }
+    }
+
+    .compareButton {
+        display: block; margin: 8px auto; text-align: center; color: #FFF;
+        width: 80px; line-height: 22px; height: 22px; background: #2E67A9;
+        border-radius: 3px; text-decoration: none;
+        font-size: 12px;
+
+        &:hover {
+            text-decoration: none;
+        }
+    }
+
+    .d {
+        text-align: center; height: 30px; line-height: 20px; cursor: default;
+        font-size: 12px;
+    }
+}
