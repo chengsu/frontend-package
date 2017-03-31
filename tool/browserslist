@@ -1,0 +1,41 @@
+# css - autoprefixer
+
+# ie11 - about 2013.10
+[production]
+last 2 version
+ie >= 11
+edge >= 12
+chrome >= 31
+ff >= 25
+safari >= 5.1
+opera >= 15
+
+# ie9
+[production]
+last 2 version
+ie >= 9
+edge >= 12
+chrome >= 31
+ff >= 25
+safari >= 5.1
+opera >= 15
+
+# ie6
+[production]
+last 2 version
+ie >= 6
+edge >= 12
+chrome >= 31
+ff >= 25
+safari >= 5.1
+opera >= 15
+
+# mobile
+[production]
+last 2 version
+ios >= 7
+android >= 4
+ie_mob >= 10
+
+[development]
+last 1 version
