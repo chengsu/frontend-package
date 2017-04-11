@@ -43,8 +43,9 @@
 
 ## 图片优化
 
-* ![](https://img.shields.io/github/stars/imagemin/imagemin.png) [imagemin](https://github.com/imagemin/imagemin)
-* [imagemin-plugins](https://www.npmjs.com/browse/keyword/imageminplugin)
+* ![](https://img.shields.io/github/stars/imagemin/imagemin.png) [imagemin](https://github.com/imagemin/imagemin) 图片压缩工具
+* [imagemin-plugins](https://www.npmjs.com/browse/keyword/imageminplugin) imagemin 插件
+* ![](https://img.shields.io/github/stars/Ensighten/spritesmith.png) [spritesmith](https://github.com/Ensighten/spritesmith) 雪碧图合成
 
 ## 其他
 
