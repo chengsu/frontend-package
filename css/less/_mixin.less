@@ -1,70 +1,126 @@
+// define variables here
+@support_ie6: true;
+@support_ie7: true;
+@support_ie8: true;
+
 // opacity
-.opacity(@opacity:.5){
-    @o:@opacity * 100;
+// usage example:
+// .opacity(.5);
+.opacity(@opacity:.5,@ie:true){
     opacity:@opacity;
-    filter:e("alpha(opacity=@{o})");
+    & when(@support_ie8){
+        & when(@ie){
+            @o:@opacity * 100;
+            filter:e("alpha(opacity=@{o})");
 
-    :root &{
-        filter:none;
+            :root &{
+                filter:none;
+            }
+        }
     }
 }
 
 // background:rgba();
-.rgba(rgb,@r:0,@g:0,@b:0,@a:.5){
-    background: rgba(@r,@g,@b,@a);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=argb(rgba(@r,@g,@b,@a)),endColorstr=argb(rgba(@r,@g,@b,@a)));
-
-    :root &{
-        filter:none;
-    }
-}
-
-// background:rgba();
-.rgba(hex,@color:#000,@a:.5){
+// usage example:
+// .rgba(#333,.5);
+.rgba(@color:#000,@a:.5,@ie:true){
     @r:red(@color);
     @g:green(@color);
     @b:blue(@color);
-    @argb:argb(rgba(@r,@g,@b,@a));
-    background: rgba(@r,@g,@b,@a);
-    filter:e("progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb},endColorstr=@{argb})");
+    @rgba:rgba(@r,@g,@b,@a);
+    background-color: @rgba;
+    & when(@support_ie8){
+        & when(@ie){
+            @argb:argb(@rgba);
+            filter:e("progid:DXImageTransform.Microsoft.gradient(startColorstr=@{argb},endColorstr=@{argb})");
 
-    :root &{
-        filter:none;
+            :root &{
+                filter:none;
+            }
+        }
+    }
+}
+
+// background:rgba();
+// usage example:
+// .rgba(rgba,51,51,51,.5);
+.rgba(rgb,@r:0,@g:0,@b:0,@a:.5,@ie:true){
+    @rgba:rgba(@r,@g,@b,@a);
+    background-color: @rgba;
+    & when(@support_ie8){
+        & when(@ie){
+            @argb:argb(@rgba);
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=@argb,endColorstr=@argb);
+
+            :root &{
+                filter:none;
+            }
+        }
+    }
+}
+
+// background:rgba();
+// usage example:
+// .rgba(hex,#333,.5);
+.rgba(hex,@color:#000,@a:.5,@ie:true){
+    .rgb(@color,@a,@ie);
+}
+
+// position:fix --top
+// usage example:
+// .fix(15px);
+.fix(@top:15px,@ie:true){
+    position: fixed;
+    top: @top;
+    & when(@support_ie6){
+        & when(@ie){
+            @t:Unit(@top);
+            _position: absolute;
+            _top: e("expression(eval(document.documentElement.scrollTop + @{t}))");
+        }
     }
 }
 
 // position:fix --bottom
-.fix(bottom,@bottom:15px,@ietop:261px){
-    @t:Unit(@ietop);
+// usage example:
+// .fix(bottom,15px,220px);
+.fix(bottom,@bottom:15px,@ietop:261px,@ie:true){
     position: fixed;
-    _position: absolute;
     bottom: @bottom;
-    _top: e("expression(eval(document.documentElement.scrollTop + document.documentElement.clientHeight - @{t}))");
+    & when(@support_ie6){
+        & when(@ie){
+            @t:Unit(@ietop);
+            _position: absolute;
+            _top: e("expression(eval(document.documentElement.scrollTop + document.documentElement.clientHeight - @{t}))");
+        }
+    }
 }
 
 // position:fix --top
-.fix(top,@top:15px){
-    @t:Unit(@top);
-    position: fixed;
-    _position: absolute;
-    top: @top;
-    _top: e("expression(eval(document.documentElement.scrollTop + @{t}))");
+// usage example:
+// .fix(top,15px);
+.fix(top,@top:15px,@ie:true){
+    .fix(@top,@ie);
 }
 
+// scrollbar
+// usage example:
+// .scrollbar();
 .scrollbar(){
+    // 定义滚动条容器
     &::-webkit-scrollbar {
         -webkit-appearance: none;
         width: 10px
     }
-
+    // 定义上下滚动按钮
     &::-webkit-scrollbar-button {
         display: none
     }
-
+    // 定义滚动轨道
     &::-webkit-scrollbar-track {
         background: #fff
     }
-
+    // 定义拖动条
     &::-webkit-scrollbar-thumb {
         min-height: 2rem;
         background: #d2d2d2;
@@ -72,7 +128,7 @@
         border: 3px solid #fff;
         border-radius: 5px
     }
-
+    // 定义拖动条激活样式
     &::-webkit-scrollbar-thumb:hover,&::-webkit-scrollbar-thumb:active {
         background-color: #aaa;
         border-width: 2px
