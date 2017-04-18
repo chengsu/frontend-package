@@ -21,8 +21,8 @@
 - [Safari](https://developer.apple.com/library/content/releasenotes/General/WhatsNewInSafari/Introduction/Introduction.html)
 
 ## 语言规范
-- [W3C](https://www.w3.org/TR/) [WHATWG](https://whatwg.org/)
-- [ES 5.1(规范)](http://www.ecma-international.org/ecma-262/5.1/) [ES 6.0/ES 2015](http://www.ecma-international.org/ecma-262/6.0/)
+- [W3C](https://www.w3.org/TR/) / [WHATWG](https://whatwg.org/)
+- [ES 5.1](http://www.ecma-international.org/ecma-262/5.1/) / [ES 6.0/ES 2015](http://www.ecma-international.org/ecma-262/6.0/)
 
 ## 兼容性
 - [caniuse](http://caniuse.com/)
